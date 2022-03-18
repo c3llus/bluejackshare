@@ -1,3 +1,4 @@
+
 import java.io.File;  
 import java.io.IOException;
 import static java.lang.System.out;
@@ -5,12 +6,12 @@ import java.util.HashSet;
 import java.util.HashMap;  
 import java.util.*;  
 
-public class MyMainClass {
+public class main {
  public static void main(String[] args) {
 
     // TODO: jadiin modular
 
-    Scanner scanner = new Scanner(System.in);   
+    Scanner scanner = new Scanner(System.in);
     boolean isAppOpen = true;
     HashSet<String> usernameList = new HashSet();
     HashMap<String, Integer> shareList = new HashMap<String, Integer>();
@@ -27,8 +28,9 @@ public class MyMainClass {
         System.out.println("+ 3. Delete Participant           +"); 
         System.out.println("+ 4. Close App                    +");
         System.out.println("+=================================+"); 
-        System.out.println("Choice >> ");
+        System.out.print("Choice >> ");
         menuOption = scanner.nextInt();  
+
 
         if (menuOption < 0 || menuOption > 4) {
             System.out.println("Input must be between 1-4");
@@ -45,7 +47,7 @@ public class MyMainClass {
             validated = false;
             while (!validated){
                 // TODO: jadiin modular
-                System.out.println("Input a number [0-100]:");  
+                System.out.print("Input a number [0-100]:");  
                 
                 // numeric validation
                 if (!scanner.hasNextInt()){
@@ -66,13 +68,13 @@ public class MyMainClass {
             // USERNAME INPUT
             validated = false;
             while(!validated){
-                System.out.println("Username [5-20 characters]:");  
+                System.out.print("Username [5-20 characters]:");  
                 username = scanner.nextLine();  
 
 
                 // 5-20 char validation
                 if (username.length() < 5 || username.length() > 20){
-                    System.out.println("Username must be 5-20 chars!"); 
+                    System.out.print("Username must be 5-20 chars!"); 
                     continue;
                 }
 
@@ -119,7 +121,8 @@ public class MyMainClass {
                 while(itrtr.hasNext()){
                     String username = itrtr.next();
                     usernameTempList[itr-1] = username;
-                    System.out.println("|"+String.valueOf(itr)+"  | "+ username +" | "+ shareList.get(username)+ " |");  
+                    System.out.println("|"+String.valueOf(itr)+"  | "+ username +" | "+ shareList.get(username)+ " |"); 
+                    itr += 1; 
                 }
 
 
@@ -183,6 +186,7 @@ public class MyMainClass {
                 String username = itrtr.next();
                 usernameTempList[itr-1] = username;
                 System.out.println("|"+String.valueOf(itr)+"  | "+ username +" | "+ shareList.get(username)+ " |");  
+                itr += 1;
             }
 
 
