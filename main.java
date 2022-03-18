@@ -68,7 +68,11 @@ public class main {
             // USERNAME INPUT
             validated = false;
             while(!validated){
-                System.out.print("Username [5-20 characters]:");  
+
+                System.out.print("Username [5-20 characters]:"); 
+
+                while (scanner.nextLine() == null){}
+
                 username = scanner.nextLine();  
 
 
@@ -218,6 +222,7 @@ public class main {
         }
 
     }
+    scanner.close();
     return;
  }
 } 

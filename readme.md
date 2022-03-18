@@ -1,0 +1,1 @@
+type `java main` on the terminal to run
